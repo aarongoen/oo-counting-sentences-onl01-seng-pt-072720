@@ -3,18 +3,33 @@ require 'pry'
 class String
 
   def sentence?
-    
-  end
+    if self.end_with?(".") == TRUE
+      TRUE
+    else 
+      false 
+    self.end_with?
+    end
+  end 
 
   def question?
-
-  end
+    if self.end_with?("?") == TRUE
+      TRUE
+    else
+      false 
+    end
+  end 
 
   def exclamation?
-
+    if self.end_with?("!") == TRUE
+      TRUE
+    else
+      false 
+    end
   end
 
   def count_sentences
-
-  end
-end
+    self.split(/\./).count #Has to begin with capital letter, not include ",", can include multiple punctuation at end. 
+    #   self.count
+    end
+  end 
+# end

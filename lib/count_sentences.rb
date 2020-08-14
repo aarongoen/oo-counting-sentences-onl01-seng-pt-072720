@@ -1,6 +1,11 @@
 require 'pry'
 
 class String
+  
+  attr_accessor :string 
+  
+  def initialize(string)
+    @string = name 
 
   def sentence?
     if self.end_with?(".") == TRUE
@@ -35,15 +40,6 @@ class String
   # self.split(/\.|\?|\!/).delete_if {|w| w.size < 2}.size
   # end
   
-  def sentence?
-    self.end_with?(".")
-  end
-  def question?
-    self.end_with?("?")
-  end
-  def exclamation?
-    self.end_with?("!")
-  end
   def count_sentences
     self.split(' ').count { |word| word.sentence? || word.question? || word.exclamation? }
   end

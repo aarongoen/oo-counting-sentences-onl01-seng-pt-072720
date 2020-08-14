@@ -31,10 +31,20 @@ class String
   #   self.split(/\./).count #Has to begin with capital letter, not include ",", can include multiple punctuation at end. 
     #   self.count
     
-  def count_sentences
-   self.split(/\.|\?|\!/).delete_if {|w| w.size < 2}.size
-  end
+  # def count_sentences
+  # self.split(/\.|\?|\!/).delete_if {|w| w.size < 2}.size
+  # end
   
-\.|\?|\!
+  def sentence?
+    self.end_with?(".")
+  end
+  def question?
+    self.end_with?("?")
+  end
+  def exclamation?
+    self.end_with?("!")
+  end
+  def count_sentences
+    self.split(' ').count { |word| word.sentence? || word.question? || word.exclamation? }
+  end
 end
-# end

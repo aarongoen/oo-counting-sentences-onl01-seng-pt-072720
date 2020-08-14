@@ -9,28 +9,15 @@ class String
   end
 
   def sentence?
-    if self.end_with?(".") == TRUE
-      TRUE
-    else 
-      false 
-    self.end_with?
-    end
+    self.end_with?(".")
   end 
 
   def question?
-    if self.end_with?("?") == true 
-      true
-    else
-      false 
-    end
+    self.end_with?("?")
   end 
 
   def exclamation?
-    if self.end_with?("!") == true
-      true
-    else
-      false 
-    end
+    self.end_with?("!")
   end
   
   def count_sentences

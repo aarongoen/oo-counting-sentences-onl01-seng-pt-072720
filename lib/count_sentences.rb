@@ -2,10 +2,15 @@ require 'pry'
 
 class String
   
-  attr_accessor :string 
+  attr_accessor :string, :count_sentences
   
   def initialize(string)
-    @string = name 
+    @string = string
+    
+    
+    
+ 
+    
 
   def sentence?
     if self.end_with?(".") == TRUE

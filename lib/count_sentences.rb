@@ -4,13 +4,10 @@ class String
   
   attr_accessor :string, :count_sentences
   
-  def initialize(string)
+  def initialize(string, count_sentences)
     @string = string
-    
-    
-    
- 
-    
+    @count_sentences = count_sentences
+  end
 
   def sentence?
     if self.end_with?(".") == TRUE

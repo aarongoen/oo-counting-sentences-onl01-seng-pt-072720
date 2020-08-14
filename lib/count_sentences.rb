@@ -1,35 +1,26 @@
 require 'pry'
 
 class String
+  
+  attr_accessor :string
+  
+  def initialize(string)
+    @string = string
+  end
 
   def sentence?
-    if self.end_with?(".") == TRUE
-      TRUE
-    else 
-      false 
-    self.end_with?
-    end
+    self.end_with?(".")
   end 
 
   def question?
-    if self.end_with?("?") == TRUE
-      TRUE
-    else
-      false 
-    end
+    self.end_with?("?")
   end 
 
   def exclamation?
-    if self.end_with?("!") == TRUE
-      TRUE
-    else
-      false 
-    end
+    self.end_with?("!")
   end
-
+  
   def count_sentences
-    self.split(/\./).count #Has to begin with capital letter, not include ",", can include multiple punctuation at end. 
-    #   self.count
-    end
-  end 
-# end
+    self.split(' ').count { |word| word.sentence? || word.question? || word.exclamation? }
+  end
+end
